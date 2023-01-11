@@ -71,9 +71,9 @@ userDetails={
   // }
 
 
-  const login=(acno,pswd)=>{
+  const login=(acno,password)=>{
     
-    return db.User.findOne({acno,pswd})//data
+    return db.User.findOne({acno,password})//data
     .then(user=>{
       if(user){
         currentUser=user.username
@@ -136,9 +136,9 @@ userDetails={
     // }
   
 
-  const deposit=(acno,pswd,amt)=>{
+  const deposit=(acno,password,amt)=>{
     var amount=parseInt(amt)
-    return db.User.findOne({acno,pswd})//data
+    return db.User.findOne({acno,password})//data
     .then(user=>{
       if(user){
         user.balance += amount;
